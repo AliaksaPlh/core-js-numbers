@@ -180,8 +180,9 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+  const power = 10 ** pow;
+  return Math.round(Math.floor(num) / power) * power;
 }
 
 /**
@@ -394,9 +395,10 @@ function toFixed(number, fractionDigits) {
  * 12345, 7    => '12345.00'
  * 12.345, 4   => '12.35'
  */
-function toPrecision(/* number, precision */) {
-  throw new Error('Not implemented');
+function toPrecision(number, precision) {
+  return number.toPrecision(precision);
 }
+// just need to learn
 
 /**
  * Returns the primitive value of a Number object.
@@ -408,9 +410,10 @@ function toPrecision(/* number, precision */) {
  * new Number(5) => 5
  * Number(-5)    => -5
  */
-function getNumberValue(/* number */) {
-  throw new Error('Not implemented');
+function getNumberValue(number) {
+  return number.valueOf();
 }
+// just need to learn
 
 /**
  * Returns a boolean value indicating whether the parameter is a number or not.
@@ -427,8 +430,8 @@ function getNumberValue(/* number */) {
  * 5        => true
  * '5'      => false
  */
-function isNumber(/* number */) {
-  throw new Error('Not implemented');
+function isNumber(number) {
+  return Number.isFinite(number);
 }
 
 /**
@@ -462,9 +465,10 @@ function isInteger(number) {
  * '4.567abcdefgh' => 4.567
  * 'abcdefgh'      => NaN
  */
-function getFloatOnString(/* str */) {
-  throw new Error('Not implemented');
+function getFloatOnString(str) {
+  return Number.parseFloat(str);
 }
+// just need to learn
 
 /**
  * Returns an integer of the specified base or, if the number cannot be parsed
@@ -480,9 +484,9 @@ function getFloatOnString(/* str */) {
  * '1.234', 2           => 1
  * '10', 8              => 8
  */
-function getIntegerOnString(/* str, base */) {
-  throw new Error('Not implemented');
-}
+function getIntegerOnString(str, base) {
+  return Number.parseInt(str, base);
+} // just need to learn
 
 /**
  * Returns whether a number is a safe integer.
@@ -495,9 +499,9 @@ function getIntegerOnString(/* str, base */) {
  * 3.5      => false
  * 2 ** 53  => false
  */
-function isSafeInteger(/* number */) {
-  throw new Error('Not implemented');
-}
+function isSafeInteger(number) {
+  return Number.isSafeInteger(number);
+} // just need to learn
 
 /**
  * Returns the smallest integer less than or equal to a given number.
@@ -569,9 +573,8 @@ function getIntegerPartNumber(number) {
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-function getSumOfNumbers(/* x1, x2, x3 */) {
-  throw new Error('Not implemented');
-  // return Math.sum(x1, x2, x3);
+function getSumOfNumbers(x1, x2, x3) {
+  return Math.sum(x1, x2, x3);
 }
 
 /**
@@ -633,8 +636,8 @@ function getHypotenuse(a, b) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
+function getCountOfOddNumbers(number) {
+  return Math.ceil(Math.abs(number / 2));
 }
 
 module.exports = {
